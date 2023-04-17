@@ -1,17 +1,4 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+import Link from "next/link"
 export default function Home() {
     return (
       <>
@@ -94,6 +81,13 @@ export default function Home() {
                         Sign in
                       </button>
                     </div>
+                    <div className="">
+                  <Link href="/"
+                        className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      >
+                        Home
+                      </Link>
+                      </div>
                   </form>
                 </div>
               </div>
@@ -105,7 +99,9 @@ export default function Home() {
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKtLAXuuXnOAsCwpxSSbDGbQkzcx8SNYcAOUMgUtK5QBUSnX-H6PTKAMi8ySsoQ338dog&usqp=CAU"
               alt=""
             />
+                    
           </div>
+        
         </div>
       </>
     )

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import FormBoknig from '../components/FormBoknig'
 import Header from '../components/Header'
+import Erbjudande from "./../components/Erbjudande"
 
 
 
@@ -28,6 +29,7 @@ export default function Example() {
     <> 
     <Header/>  
      <FormBoknig/>
+     <Erbjudande/>
 
 
  
