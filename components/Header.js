@@ -12,9 +12,14 @@ export default function Header() {
     <header className="bg-gray-900">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
+          <a href="/" className="text-sm font-semibold leading-6 text-white"   style={{
+         Image:
+            "url('https://heygolfguide.se/wp-content/uploads/2023/04/DUBAI-CREEK-DUBAI%E2%80%8B-900x600.jpeg')",
+        }}>
          Hey Golf Flyg <span aria-hidden="true"></span>
+         
           </a>
+        
         </div>
         <div className="flex lg:hidden">
           <button
@@ -29,8 +34,14 @@ export default function Header() {
      
       
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <Link href="/paket" className="text-sm font-semibold leading-6 text-white">
+          Bokning  <span aria-hidden="true"></span>
+          </Link>
+        </div>
+
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link href="/admin" className="text-sm font-semibold leading-6 text-white">
-          Admin Sign In  <span aria-hidden="true">&rarr;</span>
+          Login  <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </nav>

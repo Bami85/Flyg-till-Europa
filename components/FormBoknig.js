@@ -29,7 +29,7 @@ const FlightSearchForm = ({ results }) => {
         className="min-h-screen bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage:
-            "url('https://images.aftonbladet-cdn.se/v2/images/17c6d66d-2b02-4599-bd44-43536748f657?fit=crop&format=auto&h=900&q=50&tight=true&w=1200&s=e13af89b37a8fa0fc724f70a6a632dccb015aa73')",
+            "url('https://mallorcafastigheter.com/wp-content/uploads/2022/03/son-gual-golf-mallorca-course1-hole10-high-res-scaled.jpg')",
         }}
        
       >

@@ -96,7 +96,7 @@ export default function Home() {
           <div className="relative hidden w-0 flex-1 lg:block">
             <img
               className="absolute inset-0 h-full w-full object-cover"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKtLAXuuXnOAsCwpxSSbDGbQkzcx8SNYcAOUMgUtK5QBUSnX-H6PTKAMi8ySsoQ338dog&usqp=CAU"
+              src="https://abcmallorcastorage.blob.core.windows.net/images/2018/08/plane.jpg"
               alt=""
             />
                     
