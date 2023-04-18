@@ -38,6 +38,11 @@ export default function Header() {
           Bokning  <span aria-hidden="true"></span>
           </Link>
         </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <Link href="/PutResor" className="text-sm font-semibold leading-6 text-white">
+          Add resor  <span aria-hidden="true"></span>
+          </Link>
+        </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link href="/admin" className="text-sm font-semibold leading-6 text-white">

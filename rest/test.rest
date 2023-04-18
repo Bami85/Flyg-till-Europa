@@ -1,0 +1,19 @@
+POST http://localhost:3000/api/test/add   Json Content:
+
+{
+    "name":"Test",
+    "email":"test@gmail.com"
+}
+
+Response:
+
+{
+  "test": {
+    "name": "Test",
+    "email": "test@gmail.com",
+    "_id": "643e4f9b45cfecf0e6996650",
+    "__v": 0
+  }
+}
+
+###

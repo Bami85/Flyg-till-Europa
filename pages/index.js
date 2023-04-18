@@ -4,6 +4,9 @@ import FormBoknig from '../components/FormBoknig'
 import Header from '../components/Header'
 import PricingPage from '../components/PricingPages'
 
+
+
+
 export default function Example() {
   const [flights, setFlights] = useState()
 
@@ -22,10 +25,17 @@ export default function Example() {
   console.log(flights)
 
   return (
-    <>
+    <>   
+    
       <Header />
       <FormBoknig />
       <PricingPage />
+
+
+      
+   
+    
+
     </>
   )
 }
