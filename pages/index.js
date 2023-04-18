@@ -4,9 +4,6 @@ import FormBoknig from '../components/FormBoknig'
 import Header from '../components/Header'
 import PricingPage from '../components/PricingPages'
 
-
-
-
 export default function Example() {
   const [flights, setFlights] = useState()
 
@@ -19,23 +16,27 @@ export default function Example() {
   }
 
   useEffect(() => {
-    fetchDataHandler('/api/malaga', setFlights)
+    fetchDataHandler('/api/valencias', setFlights)
   }, [])
 
   console.log(flights)
 
   return (
-    <>   
-    
+    <>
       <Header />
       <FormBoknig />
       <PricingPage />
 
-
-      
-   
-    
-
+      {/* {flights &&
+              flights.map((flights) => {
+                return (
+                  <div key={flights.name}>
+                    <h2>{flights.imgAlt}</h2>
+                    {flights.deal}
+                    <h2>{flights.price}</h2>
+                  </div>
+                )
+              })} */}
     </>
   )
 }

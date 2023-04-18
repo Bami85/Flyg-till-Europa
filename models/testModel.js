@@ -2,11 +2,16 @@ import { Schema, model, models } from 'mongoose';
 
 const testSchema = new Schema({
   name: String,
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
+  flyg:Number,
+  departure:String,
+  destination:String,
+  avgångstid:Number,
+  hemresa:String,
+  antalPlatser: Number,
+  bokade:Number,
+  avbokningsDatum:Number,
+  price:Number,
+  url: String,
 });
 
 const Test = models.Test || model('Test', testSchema);

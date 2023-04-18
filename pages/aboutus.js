@@ -36,9 +36,33 @@ export default function Home({tests}) {
       headers: {
         'Content-Type': 'application/json',
       },
+      // body: JSON.stringify({
+      //   name: `Name ${randomNum}`,
+      //   flyg: `Flyg ${randomNum}`,
+      //   departure: `Departure ${randomNum}`,
+      //   destination: `Destination ${randomNum}`,
+      //   avgångstid: `Avgångstid ${randomNum}`,
+      //   hemresa: `Hemresa ${randomNum}`,
+      //   antalPlatser: `Antal platser ${randomNum}`,
+      //   bokade: `Bokade ${randomNum}`,
+      //   avbokningsDatum: `Avbokningsdatum ${randomNum}`,
+      //   price: `Price ${randomNum}`,
+      //   url: `URL ${randomNum}`,
+      //   email: `Email ${randomNum}`, // Add a valid email value
+      // }),
       body: JSON.stringify({
-        name: `Test ${randomNum}`,
-        email: `test${randomNum}@test.com`,
+        name: " ", // Update with appropriate value
+        flyg: "Flyg", // Update with appropriate value
+        departure:  `departure${randomNum}@departure.se`,
+        destination: "Destination", // Update with appropriate value
+        avgångstid: "Avgångstid", // Update with appropriate value
+        hemresa: "Hemresa", // Update with appropriate value
+        antalPlatser: "Antal platser", // Update with appropriate value
+        bokade: "Bokade", // Update with appropriate value
+        avbokningsDatum: "Avbokningsdatum", // Update with appropriate value
+        price: "Price", // Update with appropriate value
+        url: "URL", // Update with appropriate value
+        email: "Email", // Update with appropriate value
       }),
     });
     const data = await res.json();
@@ -54,7 +78,16 @@ export default function Home({tests}) {
           className={styles.card}
         >
           <h2>{test.name} &rarr;</h2>
-          <p>{test.email}</p>
+          <p>{test.flyg}</p>
+          <h2>{test.departure} &rarr;</h2>
+          <p>{test.destination}</p>
+          <h2>{test.avgångstid} &rarr;</h2>
+          <h2>{test.hemresa} &rarr;</h2>
+          <h2>{test.antalPlatser} &rarr;</h2>
+          <h2>{test.bokade} &rarr;</h2>
+          <p>{test.avbokningsDatum}</p>
+          <p>{test.price}</p>
+          {/* <p>{test.url}</p> */}
         </a>
       ))}
     </div>
