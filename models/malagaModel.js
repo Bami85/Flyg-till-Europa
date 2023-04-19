@@ -6,6 +6,11 @@ const valenciaSchema = new Schema({
   deal:String,
   price:Number,
   url: String,
+  img:
+  {
+      data: Buffer,
+      contentType: String
+  }
 });
 
 const Valecia = models.Valecia || model('Valecia', valenciaSchema);

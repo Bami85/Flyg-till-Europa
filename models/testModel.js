@@ -12,6 +12,7 @@ const testSchema = new Schema({
   avbokningsDatum:Number,
   price:Number,
   url: String,
+  
 });
 
 const Test = models.Test || model('Test', testSchema);

@@ -1,9 +1,31 @@
+
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 const posts = []
 
-export default function Example() {
+const features = [
+    {
+      name: 'EL PARAISO ',
+      description: 'EL PARAISO GOLF CLUB är en av de mest etablerade golfbanorna på Costa del Sol i södra Spanien, med en historia som sträcker sig tillbaka till 1970-talet. Banan, som ligger i hjärtat av det exklusiva området El Paraiso, är omgiven av vackra trädgårdar och har fantastiska utsikter över bergen och havet.',
+      imageSrc: 'https://heygolfguide.se/wp-content/uploads/2023/04/EL-PARAISO-MALAGA%E2%80%8B.jpeg',
+      imageAlt: 'Green cardstock box containing white, beige, and brown cards.',
+    },
+    {
+      name: 'VALDERRAMA',
+      description: 'VALDERRAMA GOLF CLUB – MALAGA är en av de mest prestigefyllda golfbanorna i världen och är belägen i Sotogrande, en exklusiv destination på Costa del Sol i södra Spanien. Banan är känd för att vara en av de mest utmanande i Europa, och har varit värd för flera internationella golfmästerskap, inklusive Ryder Cup och Volvo Masters.',
+      imageSrc: 'https://www.yorbalindaclub.com/Images/Library/about-album-4.jpg',
+      imageAlt: 'Green cardstock box open with 50 cards inside.',
+    },
+    {
+      name: 'Almenara',
+      description: 'ALMENARA GOLF RESORT – MALAGA beläget i San Roque, nära Sotogrande i Malaga, är en av de mest kända golfanläggningarna i södra Spanien. Banan är designad av den välrenommerade banarkitekten Dave Thomas och erbjuder en utmanande golfupplevelse för spelare av alla nivåer.',
+      imageSrc: 'https://heygolfguide.se/wp-content/uploads/2023/04/ALMENARA-MALAGA%E2%80%8B-1.jpeg',
+      imageAlt: 'Detail of white today card, beige next card, and brown someday card with dot grid.',
+    },
+  ]
+  
+  export default function Example() {
   const [flights, setFlights] = useState([])
   const router = useRouter()
   const { slug } = router.query
@@ -14,46 +36,57 @@ export default function Example() {
     const response = await fetch(url)
 
     const data = await response.json()
-console.log(data)
-setFlights(data.data)
+    console.log(data)
+    setFlights(data.data)
   }
 
   useEffect(() => {
-      console.log("kommer jag in här?")
-      if(slug){
-          //console.log(`/api/resorpaket/${slug}`)
-          fetchDataHandler(`/api/resorpaket/${slug}`)
-      }
+    console.log('kommer jag in här?')
+    if (slug) {
+      //console.log(`/api/resorpaket/${slug}`)
+      fetchDataHandler(`/api/resorpaket/${slug}`)
+    }
   }, [slug])
 
   console.log(flights)
+    return (
+      <div className="bg-white">
+        <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
+          <div className="max-w-3xl">
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">EL PARAISO GOLF CLUB VALENCIA</p>
+            <p className="mt-4 text-gray-500">
+            är en av de mest etablerade golfbanorna på Costa del Sol i södra Spanien, med en historia som sträcker sig tillbaka till 1970-talet. Banan, som ligger i hjärtat av det exklusiva området El Paraiso, är omgiven av vackra trädgårdar och har fantastiska utsikter över bergen och havet.
+            Designad av den legendariske golfarkitekten Gary Player, är El Paraiso Golf Club en 18-håls parkbana med breda fairways, snabba greener och en mängd utmanande bunkrar och vattenhinder. Banan är väl underhållen och har nyligen genomgått en omfattande renovering för att förbättra spelprestanda och golfupplevelsen.
 
-  return (
-    <>
-      <div className="bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Hej från Malaga 
-            </h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
-              Allt data kommer från mongodb
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-y-20 gap-x-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-           {/*  {flights &&
+  
+          <div className="mt-11 grid grid-cols-1 items-start gap-x-6 gap-y-16 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
+            {/* {features.map((feature) => (
+              <div key={feature.name} className="flex flex-col-reverse">
+                <div className="mt-6">
+                  <h3 className="text-sm font-medium text-gray-900">{feature.name}</h3>
+                  <p className="mt-2 text-sm text-gray-500">{feature.description}</p>
+                </div>
+                <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
+                  <img src={feature.imageSrc} alt={feature.imageAlt} className="object-cover object-center" />
+                </div>
+              </div>
+            ))} */}
+
+            {flights &&
               flights.map((flights) => {
                 return (
-                  <div key={flights.name}>
-                    <h2>{flights.name}</h2>
+                  <div key={flights.name} className="flex flex-col-reverse">
                     {flights.deal}
-                    <h2>{flights.imgAlt}</h2>
+                    <h2 className="text-sm font-medium text-gray-900">{flights.imgAlt}</h2>
                   </div>
                 )
-              })} */}
+              })}
           </div>
         </div>
       </div>
-    </>
-  )
-}
+    )
+  }
+  
+
