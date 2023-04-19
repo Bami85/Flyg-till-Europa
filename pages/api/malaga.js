@@ -1,3 +1,4 @@
+
 import clientPromise from "../../lib/mongodb";
 
 export default async function handler(req, res) {
@@ -6,7 +7,7 @@ export default async function handler(req, res) {
   switch (req.method) {
     case "POST":
       let bodyObject = JSON.parse(req.body);
-      let newPost = await db.collection("Malaga").insertOne(bodyObject);
+      let newPost = await db.collection("Malaga").insertOne(bodyObject); // Inserimento di un singolo documento
       res.json(newPost.ops[0]);
       break;
     case "GET":
@@ -15,3 +16,7 @@ export default async function handler(req, res) {
       break;
   }
 }
+
+
+
+
