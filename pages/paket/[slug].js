@@ -1,4 +1,4 @@
-
+import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
@@ -50,11 +50,17 @@ const features = [
 
   console.log(flights)
     return (
+        
       <div className="bg-white">
+               
         <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
+    
           <div className="max-w-3xl">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        </div>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">EL PARAISO GOLF CLUB VALENCIA</p>
             <p className="mt-4 text-gray-500">
+
             är en av de mest etablerade golfbanorna på Costa del Sol i södra Spanien, med en historia som sträcker sig tillbaka till 1970-talet. Banan, som ligger i hjärtat av det exklusiva området El Paraiso, är omgiven av vackra trädgårdar och har fantastiska utsikter över bergen och havet.
             Designad av den legendariske golfarkitekten Gary Player, är El Paraiso Golf Club en 18-håls parkbana med breda fairways, snabba greener och en mängd utmanande bunkrar och vattenhinder. Banan är väl underhållen och har nyligen genomgått en omfattande renovering för att förbättra spelprestanda och golfupplevelsen.
 
@@ -83,7 +89,21 @@ const features = [
                   </div>
                 )
               })}
+              
           </div>
+          <div className='flex justify-center py-12'>
+                    <Link href='/'> 
+                      
+                        <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
+                            Home
+                            <HiOutlineChevronDoubleUp
+                                className='#db2777'
+                                size={50}
+                            />
+                        </div>
+                       
+                    </Link>
+        </div>
         </div>
       </div>
     )

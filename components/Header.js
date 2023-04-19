@@ -43,6 +43,11 @@ export default function Header() {
           Add resor  <span aria-hidden="true"></span>
           </Link>
         </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <Link href="/paket/malaga" className="text-sm font-semibold leading-6 text-white">
+          Resor paket  <span aria-hidden="true"></span>
+          </Link>
+        </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link href="/admin" className="text-sm font-semibold leading-6 text-white">
