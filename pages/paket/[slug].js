@@ -33,7 +33,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 export default function Example() {
-  const [images, setImages] = ''
+ 
   const [flights, setFlights] = useState([])
   const [searchPaket, setSearchPaket] = useState('')
   const router = useRouter()
