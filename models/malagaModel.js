@@ -2,15 +2,16 @@ import { Schema, model, models } from 'mongoose';
 
 const valenciaSchema = new Schema({
   name: String,
-  imgAlt:String,
-  deal:String,
+  flyg:Number,
+  departure:String,
+  destination:String,
+  avgångstid:Number,
+  hemresa:String,
+  antalPlatser: Number,
+  bokade:Number,
+  avbokningsDatum:Number,
   price:Number,
   url: String,
-  img:
-  {
-      data: Buffer,
-      contentType: String
-  }
 });
 
 const Valecia = models.Valecia || model('Valecia', valenciaSchema);

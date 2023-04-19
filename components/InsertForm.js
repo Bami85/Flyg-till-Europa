@@ -24,7 +24,7 @@ export default function FormComponent({ tests }) {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const response = await fetch('/api/test/add', {
+      const response = await fetch(`/api/resorpaket/${slug}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,6 +50,7 @@ export default function FormComponent({ tests }) {
           url: ``,
           email: ``, // Add a valid email value
         })
+        
       } else {
         // Hantera fel från API
         console.error('Något gick fel vid inlämning av formulärdata')
@@ -58,6 +59,7 @@ export default function FormComponent({ tests }) {
       // Hantera eventuella nätverksfel
       console.error('Något gick fel vid inlämning av formulärdata', error)
     }
+    e.target.reset()
   }
   return (
     <>
