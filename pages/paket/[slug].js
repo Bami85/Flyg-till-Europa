@@ -40,6 +40,9 @@ export default function Example() {
   const { slug } = router.query
   console.log(slug) // Add this line to check if slug is defined
 
+  const imagePath = `/images/${slug}.jpeg` // Create the image path using the slug
+  console.log(imagePath) // Check if the image path is correct
+
   console.log('kommer jag hit?')
   console.log(slug)
 
@@ -95,6 +98,7 @@ export default function Example() {
                     onChange={(e) => setSearchPaket(e.target.value)}
                   />
                 </form>
+                
 
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 md:text-gray-400"></p>
               </div>
@@ -138,23 +142,24 @@ export default function Example() {
               </div>
             ))}
 
-            {flights &&
-              flights.map((flights) => {
+            {flights && flights.map((flights) => {
                 return (
                   <div key={flights.name} className="flex flex-col-reverse">
                     {flights.deal}
                     <h2 className="text-sm font-medium text-gray-900">
+                      <br />
                       {flights.imgAlt}
                     </h2>
-
-                    <img
+                    {/* <img
                       className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100"
                       src={`/api/image/${slug}`}
                       alt="Image"
                       className="object-cover object-center"
                       width={500}
                       height={500}
-                    />
+                    /> */}
+                           <button>Booka Resa </button>
+                    <img src={imagePath} alt={`Image of ${slug}`} />
                   </div>
                 )
               })}
@@ -172,3 +177,4 @@ export default function Example() {
     </>
   )
 }
+
