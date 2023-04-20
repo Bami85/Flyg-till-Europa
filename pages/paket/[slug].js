@@ -40,8 +40,11 @@ export default function Example() {
   const { slug } = router.query
   console.log(slug) // Add this line to check if slug is defined
 
-  const imagePath = `/images/${slug}.jpeg` // Create the image path using the slug
-  console.log(imagePath) // Check if the image path is correct
+  //const imagePath = `/images/${slug}.jpeg` // Create the image path using the slug
+  //console.log(imagePath) // Check if the image path is correct
+
+  const imagePath = '/images/malaga.jpeg';
+<img src={imagePath} alt="Malaga" />
 
   console.log('kommer jag hit?')
   console.log(slug)
@@ -147,6 +150,7 @@ export default function Example() {
                   <div key={flights.name} className="flex flex-col-reverse">
                     {flights.deal}
                     <h2 className="text-sm font-medium text-gray-900">
+                      <button>Booka Resa </button>
                       <br />
                       {flights.imgAlt}
                     </h2>
@@ -158,8 +162,8 @@ export default function Example() {
                       width={500}
                       height={500}
                     /> */}
-                           <button>Booka Resa </button>
                     <img src={imagePath} alt={`Image of ${slug}`} />
+
                   </div>
                 )
               })}
@@ -178,3 +182,164 @@ export default function Example() {
   )
 }
 
+// import React,{ useState, useEffect } from 'react'
+// import { useRouter } from 'next/router'
+
+// export default function Example() {
+//   const [flights, setFlights] = useState([])
+//   const [searchPaket, setSearchPaket] = useState('')
+//   const [reservationInfo, setReservationInfo] = useState({
+//     name: '',
+//     email: '',
+//     phoneNumber: '',
+//     flightDetails: ''
+//   })
+//   const router = useRouter()
+//   const { slug } = router.query
+
+//   console.log(slug)
+//   console.log('kommer jag hit?')
+//   console.log(slug)
+
+//   const fetchDataHandler = async (url) => {
+//     const response = await fetch(url)
+
+//     const data = await response.json()
+//     console.log(data)
+//     setFlights(data.data)
+//   }
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault()
+//     if (searchPaket) {
+//       fetchDataHandler(`/api/resorpaket/${searchPaket}`)
+//       setSearchPaket('')
+//     }
+//   }
+
+//   const handleReservationSubmit = async (e) => {
+//     e.preventDefault()
+
+//     const response = await fetch(`/api/malaga/addResor`, {
+//       method: 'POST',
+//       body: JSON.stringify(reservationInfo),
+//       headers: {
+//         'Content-Type': 'application/json'
+//       }
+//     })
+
+//     const data = await response.json()
+//     console.log(data)
+
+//     // reset the form after submission
+//     setReservationInfo({
+//       name: '',
+//       email: '',
+//       phoneNumber: '',
+//       flightDetails: ''
+//     })
+//   }
+
+//   const handleInputChange = (e) => {
+//     const { name,email,phoneNumber, value } = e.target
+//     setReservationInfo(prevState => ({
+//       ...prevState,
+//       [name]: value,
+//       [email]:value,
+//       [phoneNumber]:value,
+   
+//     }))
+//   }
+
+//   return (
+//     <>
+//     <div className="px-6 py-6 md:px-8 md:py-0">
+//       <form onSubmit={handleSubmit}>
+//         <input type="text" value={searchPaket} onChange={e => setSearchPaket(e.target.value)} />
+//         <button type="submit">Search</button>
+//       </form>
+
+//       <form  onSubmit={handleReservationSubmit}>
+//         <input type="text" name="name" value={reservationInfo.name} onChange={handleInputChange} />
+//         <input type="email" name="email" value={reservationInfo.email} onChange={handleInputChange} />
+//         <input type="tel" name="phoneNumber" value={reservationInfo.phoneNumber} onChange={handleInputChange} />
+//         <input type="text" name="flightDetails" value={reservationInfo.flightDetails} onChange={handleInputChange} />
+//         <button type="submit">Submit Reservation</button>
+//       </form>
+
+//     </div>
+//                 {flights &&
+//               flights.map((flights) => {
+//                 return (
+//                   <div key={flights.name} className="flex flex-col-reverse">
+//                     {flights.deal}
+//                     <h2 className="text-sm font-medium text-gray-900">
+//                       {flights.imgAlt}
+//                     </h2>
+
+//                     <img
+//                       className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100"
+//                       src={`/api/image/${slug}`}
+//                       alt="Image"
+//                       className="object-cover object-center"
+//                       width={500}
+//                       height={500}
+//                     />
+
+//                   </div>
+//                 )
+//               })}
+//     </>
+//   )
+// }
+
+
+
+
+
+// import { useState, useEffect } from 'react'
+// import { useRouter } from 'next/router'
+
+// export default function Example() {
+//   const [flights, setFlights] = useState([])
+//   const [searchPaket, setSearchPaket] = useState('')
+//   const router = useRouter()
+//   const { slug } = router.query
+//   console.log(slug) // Add this line to check if slug is defined
+
+//   const imagePath = `/images/${slug}.jpeg` // Create the image path using the slug
+//   console.log(`/images/${slug}.jpeg`) // Check if the image path is correct
+
+//   const fetchDataHandler = async (url) => {
+//     const response = await fetch(url)
+
+//     const data = await response.json()
+//     console.log(data)
+//     setFlights(data.data)
+//   }
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault()
+//     if (searchPaket) {
+//       fetchDataHandler(`/api/resorpaket/${searchPaket}`)
+//       setSearchPaket('')
+//     }
+//   }
+
+//   console.log(flights)
+
+//   return (
+//     <div>
+//       <h1>{slug}</h1>
+//       <img src={imagePath} alt={`Image of ${slug}`} />
+//       <form onSubmit={handleSubmit}>
+//         <input
+//           type="text"
+//           value={searchPaket}
+//           onChange={(e) => setSearchPaket(e.target.value)}
+//         />
+//         <button type="submit">Search</button>
+//       </form>
+//     </div>
+//   )
+// }
