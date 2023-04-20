@@ -9,44 +9,43 @@ const FlightSearchForm = ({ results }) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault()
-  
+
     // Gör API-anrop med sökparametrar och sätt limit till 10
     const API_KEY = '2b29f6a6-8b74-4977-9e9d-c51d51e60cc5'
     const limit = 10 // Sätt limit till 10
-    const URL = `https://airlabs.co/api/v9/flights?api_key=${API_KEY}&flag=${flag}&departure=${departure}&destination=${searchQuery}&arrival=${arrival}&limit=${limit}`; // Lägg till limit i URL:en
+    const URL = `https://airlabs.co/api/v9/flights?api_key=${API_KEY}&flag=${flag}&departure=${departure}&destination=${searchQuery}&arrival=${arrival}&limit=${limit}` // Lägg till limit i URL:en
     const response = await fetch(URL)
     const data = await response.json()
-  
+
     // Uppdatera sökresultat med API-svar
     setSearchResults(data.response)
   }
-  
 
   return (
     <>
-    
       <div
         className="min-h-screen bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage:
             "url('https://mallorcafastigheter.com/wp-content/uploads/2022/03/son-gual-golf-mallorca-course1-hole10-high-res-scaled.jpg')",
         }}
-       
       >
-         <ul className="divide-y divide-gray-200 bg-white ">
-                {searchResults&&searchResults.map((result, i) => (
-                  <tr key={i}>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                      <h1>Flight_number </h1>
-                      {result.flight_number} 
-                    </td>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">  <h1>Reg_number </h1>
-                    {result.reg_number}</td>
-
-                  </tr>
-                ))}
-              </ul>
-        
+        <ul className="divide-y divide-gray-200 bg-white ">
+          {searchResults &&
+            searchResults.map((result, i) => (
+              <tr key={i}>
+                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                  <h1>Flight_number </h1>
+                  {result.flight_number}
+                </td>
+                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                  {' '}
+                  <h1>Reg_number </h1>
+                  {result.reg_number}
+                </td>
+              </tr>
+            ))}
+        </ul>
 
         <form
           onSubmit={handleFormSubmit}
@@ -87,7 +86,7 @@ const FlightSearchForm = ({ results }) => {
             </label>
             <input type="date" id="return" placeholder="Select return date" />
           </div>
-              Lands Flag
+          Lands Flag
           <div className="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
             <input
               type="text"
@@ -101,7 +100,6 @@ const FlightSearchForm = ({ results }) => {
           </button>
         </form>
       </div>
-
     </>
   )
 }
