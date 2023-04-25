@@ -41,8 +41,6 @@ export default function Example() {
 
   const imagePathBase = "/images/";
   const imagePath = `${imagePathBase}${slug}.jpeg`;
-
-  
   console.log('kommer jag hit?')
   console.log(slug)
   
@@ -63,13 +61,6 @@ export default function Example() {
     }
   }
 
-  // useEffect(() => {
-  //   console.log('kommer jag in här?')
-  //   if (slug) {
-  //     //console.log(`/api/resorpaket/${slug}`)
-  //     fetchDataHandler(`/api/resorpaket/${slug}`)
-  //   }
-  // }, [slug])
 console.log(searchPaket)
   console.log(flights)
   return (
@@ -152,19 +143,7 @@ console.log(searchPaket)
                       <br />
                       {flights.imgAlt}
                     </h2>
-                    {/* <img
-                      className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100"
-                      src={`/api/image/${slug}`}
-                      alt="Image"
-                      className="object-cover object-center"
-                      width={500}
-                      height={500}
-                    /> */}
-                    <img src={imagePath} alt={`Image of ${slug}`}/>
-                    {/* <img src={imagePath} alt={slug} /> */}
-
-                    {/* <img src={imagePath} alt={`Image of ${searchPaket}`} /> */}
-                    {/* <img src={`/images/${flights.url}`} alt={`Image of ${slug}`} /> */}
+                    <img src={`${imagePathBase}${flights.url}.jpeg`} alt={`Image of ${slug}`} />
                   </div>
                 )
               })}
