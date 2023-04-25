@@ -39,7 +39,7 @@ export default function Example() {
   const { slug } = router.query
   console.log(slug) // Add this line to check if slug is defined
 
-  const imagePathBase = '/images/'
+  const imagePathBase = `/images/`
   const imagePath = `${imagePathBase}${slug}.jpeg`
   console.log('kommer jag hit?')
   console.log(slug)
@@ -147,7 +147,7 @@ export default function Example() {
                     <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
                       <img
                         src={`${imagePathBase}${flights.url}.jpeg`}
-                        alt={`${imagePathBase}`}
+                        alt={`${imagePathBase}${slug}`}
                       />
                     </div>
                   </div>
