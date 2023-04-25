@@ -143,7 +143,7 @@ console.log(searchPaket)
                       <br />
                       {flights.imgAlt}
                     </h2>
-                    <img src={`${imagePathBase}${flights.url}.jpeg`} alt={`Image of ${slug}`} />
+                    <img src={`${imagePathBase}${flights.url}.jpeg`} alt={`Image of ${imagePath}`} />
                   </div>
                 )
               })}
