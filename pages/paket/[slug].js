@@ -40,7 +40,7 @@ export default function Example() {
   console.log(slug) // Add this line to check if slug is defined
 
   const imagePathBase = "/images/";
-  // const imagePath = `${imagePathBase}${slug}.jpeg`;
+  const imagePath = `${imagePathBase}${slug}.jpeg`;
   console.log('kommer jag hit?')
   console.log(slug)
   
@@ -143,7 +143,7 @@ console.log(searchPaket)
                       <br />
                       {flights.imgAlt}
                     </h2>
-                    <img src={`${imagePathBase}${flights.url}.jpeg`} alt={`/images/${slug}.jpeg`} />
+                    <img src={`${imagePathBase}${flights.url}.jpeg`} alt={`${imagePathBase}`} />
                   </div>
                 )
               })}
