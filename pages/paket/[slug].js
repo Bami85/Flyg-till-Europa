@@ -39,15 +39,14 @@ export default function Example() {
   const { slug } = router.query
   console.log(slug) // Add this line to check if slug is defined
 
-  //const imagePath = `/images/${slug}.jpeg` // Create the image path using the slug
-  //console.log(imagePath) // Check if the image path is correct
+  const imagePathBase = "/images/";
+  const imagePath = `${imagePathBase}${slug}.jpeg`;
 
-  const imagePath = '/images/malaga.jpeg'
-  ;<img src={imagePath} alt="Malaga" />
-
+  
   console.log('kommer jag hit?')
   console.log(slug)
-
+  
+  
   const fetchDataHandler = async (url) => {
     const response = await fetch(url)
 
@@ -71,7 +70,7 @@ export default function Example() {
   //     fetchDataHandler(`/api/resorpaket/${slug}`)
   //   }
   // }, [slug])
-
+console.log(searchPaket)
   console.log(flights)
   return (
     <>
@@ -161,7 +160,11 @@ export default function Example() {
                       width={500}
                       height={500}
                     /> */}
-                    <img src={imagePath} alt={`Image of ${slug}`} />
+                    <img src={imagePath} alt={`Image of ${slug}`}/>
+                    {/* <img src={imagePath} alt={slug} /> */}
+
+                    {/* <img src={imagePath} alt={`Image of ${searchPaket}`} /> */}
+                    {/* <img src={`/images/${flights.url}`} alt={`Image of ${slug}`} /> */}
                   </div>
                 )
               })}

@@ -31,6 +31,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchDataHandler('/api/posts', setFlights)
+    
   }, [])
   console.log(flights)
 
