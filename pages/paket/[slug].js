@@ -39,12 +39,11 @@ export default function Example() {
   const { slug } = router.query
   console.log(slug) // Add this line to check if slug is defined
 
-  const imagePathBase = "/images/";
-  const imagePath = `${imagePathBase}${slug}.jpeg`;
+  const imagePathBase = '/images/'
+  const imagePath = `${imagePathBase}${slug}.jpeg`
   console.log('kommer jag hit?')
   console.log(slug)
-  
-  
+
   const fetchDataHandler = async (url) => {
     const response = await fetch(url)
 
@@ -61,7 +60,7 @@ export default function Example() {
     }
   }
 
-console.log(searchPaket)
+  console.log(searchPaket)
   console.log(flights)
   return (
     <>
@@ -137,13 +136,20 @@ console.log(searchPaket)
               flights.map((flights) => {
                 return (
                   <div key={flights.name} className="flex flex-col-reverse">
-                    {flights.deal}
-                    <h2 className="text-sm font-medium text-gray-900">
-                      <button>Booka Resa </button>
-                      <br />
-                      {flights.imgAlt}
-                    </h2>
-                    <img src={`${imagePathBase}${flights.url}.jpeg`} alt={`${imagePathBase}`} />
+                    <div className="mt-6">
+                      <h3 className="text-sm font-medium text-gray-900">
+                        {flights.name}
+                      </h3>
+                      <p className="mt-2 text-sm text-gray-500">
+                        {flights.imgAlt}
+                      </p>
+                    </div>
+                    <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
+                      <img
+                        src={`${imagePathBase}${flights.url}.jpeg`}
+                        alt={`${imagePathBase}`}
+                      />
+                    </div>
                   </div>
                 )
               })}
@@ -161,4 +167,3 @@ console.log(searchPaket)
     </>
   )
 }
-
