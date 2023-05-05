@@ -10,7 +10,7 @@ const FlightSearchForm = ({ results }) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault()
 
-    // Gör API-anrop med sökparametrar och sätt limit till 10
+    // Gör API-anrop med sökparametrar
     const API_KEY = '2b29f6a6-8b74-4977-9e9d-c51d51e60cc5'
     const limit = 10 // Sätt limit till 10
     const URL = `https://airlabs.co/api/v9/flights?api_key=${API_KEY}&flag=${flag}&departure=${departure}&destination=${searchQuery}&arrival=${arrival}&limit=${limit}` // Lägg till limit i URL:en

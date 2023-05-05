@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-
+import Link from 'next/link'
+import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 export default function FormComponent({ tests }) {
   const [formData, setFormData] = useState({
     name: ``,
@@ -16,6 +17,7 @@ export default function FormComponent({ tests }) {
     email: ``, // Add a valid email value
   })
 
+
   const handleChange = (event) => {
     const { name, value } = event.target
     setFormData({ ...formData, [name]: value })
@@ -23,7 +25,7 @@ export default function FormComponent({ tests }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-
+  
     try {
       const response = await fetch('/api/test/add', {
         method: 'POST',
@@ -34,9 +36,9 @@ export default function FormComponent({ tests }) {
       })
 
       if (response.ok) {
-        // Gör något efter framgångsrik inlämning
+        // Gör något efter framgångsrik 
         console.log('Formulärdata skickad till API:', formData)
-        // Återställ formuläret efter inlämning
+        // Återställ formuläret 
         setFormData({
           name: ``,
           flyg: ``,
@@ -329,16 +331,24 @@ export default function FormComponent({ tests }) {
                       <p>{test.flyg}</p>
                       <p>{test.departure}</p>
                       <p>{test.destination}</p>
-                      <p>{test.avgångstid}</p>
+                      {/* <p>{test.avgångstid}</p>
                       <p>{test.hemresa}</p>
                       <p>{test.antalPlatser}</p>
                       <p>{test.bokade}</p>
                       <p>{test.avbokningsDatum}</p>
                       <p>{test.price}</p>
                       <p>{test.url}</p>
-                      <p>{test.email}</p>
+                      <p>{test.email}</p> */}
                     </a>
                   ))}
+              </div>
+              <div className="flex justify-center py-12">
+                <Link href="/">
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
+                    Home
+                    <HiOutlineChevronDoubleUp className="#db2777" size={50} />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
