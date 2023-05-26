@@ -76,7 +76,10 @@ export default function Example() {
                   <span className="text-blue-600 dark:text-blue-400 md:text-blue-300">
                     Golf
                   </span>{' '}
-                  resa till Spanien
+                  resa till Malaga 
+                  <span className="text-blue-600 dark:text-blue-400 md:text-blue-300">
+                
+                  </span>{' '}  Valencia
                 </h2>
                 <form onSubmit={handleSubmit}>
                   <button className="mt-4 text-red-500" type="submit">
