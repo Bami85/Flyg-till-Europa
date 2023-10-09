@@ -86,7 +86,7 @@ const FlightSearchForm = ({ results }) => {
             </label>
             <input type="date" id="return" placeholder="Select return date" />
           </div>
-          Lands Flag
+              Lands Flag
           <div className="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
             <input
               type="text"
